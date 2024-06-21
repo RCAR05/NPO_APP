@@ -1,7 +1,6 @@
-from fastapi import FastAPI
+from website import create_app
 
-app = FastAPI()
+app = create_app()
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+if __name__ == '__main__':
+    app.run(debug=True)
