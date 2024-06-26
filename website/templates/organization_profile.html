@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}Organization Profile{% endblock %}
+
+{% block content %}
+<form method="POST">
+    <h3>Organization Profile</h3>
+    <div class="form-group">
+      <label for="org_description">Please give a decription of what your organization does?</label>
+      <input
+        type="text"
+        class="form-control"
+        id="org_description"
+        name="org_description"
+        placeholder="Our organization provides educational resources and support to underprivileged children, aiming to enhance their learning opportunities and improve their academic performance."
+      />
+    </div>
+    <div class="form-group">
+      <label for="mission"> What is your organization's mission statement?</label>
+      <input
+        type="text"
+        class="form-control"
+        id="mission"
+        name="mission"
+        placeholder="Our mission is to solve poverty by enhancing education."
+      />
+    </div>
+    <div class="form-group">
+      <label for="project_desc">Briefly describe the project requirements?</label>
+      <input
+        type="text"
+        class="form-control"
+        id="project_desc"
+        name="project_desc"
+        placeholder="Market Research: Conduct in-depth research to identify target demographics, market needs, and competitive landscape."
+      />
+    </div>
+    <div class="form-group">
+      <label for="goals">What are the goals and expected impact of your projects?</label>
+      <input
+        type="text"
+        class="form-control"
+        id="goals"
+        name="goals"
+        placeholder="To understand the competitive landscape of the education space."
+      />
+    </div>
+    <div class="form-group">
+      <label for="required_skills">What specific skills or qualifications are you looking for in students?</label>
+      <input
+        type="text"
+        class="form-control"
+        id="required_skills"
+        name="required_skills"
+        placeholder="e.g., experience with social media, proficiency in certain software"
+      />
+    </div>
+    <div class="form-group">
+      <label for="estimated_hours">How many hours do you expect the project to need in total?</label>
+      <input
+        type="text"
+        class="form-control"
+        id="estimated_hours"
+        name="estimated_hours"
+        placeholder="15 hours"
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">Please provide an email address for students to reach out?</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        placeholder="Key contact email address"
+      />
+    </div>
+    <div class="form-group">
+        <label for="ai_project_enhancement">AI project enhancement</label>
+        <input
+          type="checkbox"
+          class="form-control"
+          id="ai_project_enhancement"
+          name="ai_project_enhancement"
+          value="True"
+          checked
+        />
+      </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  {% endblock %}

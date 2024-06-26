@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block title %}Student Profile{% endblock %}
+
+{% block content %}
+<form id="dataForm" method="POST">
+    <h3>Student Profile</h3>
+    <div class="form-group">
+      <label for="education_level">What is your current education level? </label>
+      <select id="education_level", name="education_level", placeholder="Undergraduate", class="form-control">
+        <option value="Undergraduate">Undergraduate</option>
+        <option value="Graduate">Graduate</option>
+        <option value="Graduated">Graduated, working/looking for work</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="education_major">What is your major or field of study?</label>
+      <input
+        type="text"
+        class="form-control"
+        id="education_major"
+        name="education_major"
+        placeholder="Political Sciences"
+      />
+    </div>
+    <div class="form-group">
+      <label for="education_major">What skills and competencies do you possess that are relevant to non-profit projects?</label>
+      <input
+        type="text"
+        class="form-control"
+        id="skills"
+        name="skills"
+        placeholder="e.g., data analysis, graphic design, project management"
+      />
+    </div>
+    <div class="form-group">
+      <label for="work_experience">Briefly explain any work experience you have?</label>
+      <input
+        type="text"
+        class="form-control"
+        id="work_experience"
+        name="work_experience"
+        placeholder="Marketing professional who has worked on GTM Social Media campaigns"
+      />
+    </div>
+    <div class="form-group">
+      <label for="interests">What types of projects are you interested in?</label>
+      <input
+        type="text"
+        class="form-control"
+        id="interests"
+        name="interests"
+        placeholder="environmental sustainability, education, community development"
+      />
+    </div>
+    <div class="form-group">
+      <label for="available_hours">How many hours can you commit to a project per week?</label>
+      <input
+        type="text"
+        class="form-control"
+        id="available_hours"
+        name="available_hours"
+        placeholder="15 hours"
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">What is the best email to connect with you?</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        placeholder="student@email.com"
+      />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <div>
+  
+    <div class = "display-group">
+      <h3>Current Student Profile</h3>
+      Under construction!
+      <!-- {% if user_data %}
+        <p><strong>Date Updated:</strong> {{ user_data.date }}</p>
+        <p><strong>Education Level:</strong> {{ user_data.education_level }}</p>
+        <p><strong>Major:</strong> {{ user_data.education_major }}</p>
+        <p><strong>Skills and Competencies:</strong> {{ user_data.skills }}</p>
+        <p><strong>Work Experience:</strong> {{ user_data.work_experience }}</p>
+        <p><strong>Project Interests:</strong> {{ user_data.interests }}</p>
+        <p><strong>Available Hours:</strong> {{ user_data.hours }}</p>
+        <p><strong>Contact Email:</strong> {{ user_data.email }}</p>
+      {% else %}
+        <p>No data available.</p>
+      {% endif %}
+    </div> -->
+  
+  </body>
+  {% endblock %}

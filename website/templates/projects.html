@@ -1,0 +1,40 @@
+{% extends "base.html" %} {% block title %}Projects{% endblock %} 
+{% block content
+    %}
+    <h3>Projects</h3>
+    <body style="text-align: left;">
+      <!-- <table class="table", id="projects">
+          <tr class="table__header">
+              <th>Organizaton</th>
+              <th>Mission</th>
+              <th>Project Description with AI</th>
+              <th>Goals of the Project</th>
+              <th>Estimated Hours</th>
+              <th>Contact Email</th>
+          </tr>
+          {% for project in projects %}
+          <tr>
+            <td>{{ project.org_description }}</td>
+            <td>{{ project.mission }}</td>
+            <td>{{ project.ai_project_desc }}</td>
+            <td>{{ project.goals }}</td>
+            <td>{{ project.estimated_hours }}</td>
+            <td>{{ project.email }}</td>
+          </tr>
+          {% endfor %} -->
+      </table> 
+      <h4>This is a list of projects that our non-profit organizations have provided. Take some time to read through them. If you are interested, please use the contact email to connect with the non-profit organization.</h4>
+        <hr>
+        <ul>
+          {% for project in projects %} 
+          <li><span style="font-weight:bold;">Organization: </span>{{ project.org_description }}</li>
+          <li><span style="font-weight:bold;">Mission: </span>{{ project.mission }} </li>
+          <li><span style="font-weight:bold;">Project Description Enhanced by AI: </span> {{ project.ai_project_desc}} </li>
+          <li><span style="font-weight:bold;">Goals: </span> {{ project.goals }} </li>
+          <li><span style="font-weight:bold;">Estimated Hours: </span> {{ project.estimated_hours }}</li>
+          <li><span style="font-weight:bold;">Contact Email: </span> <span><a href= "mailto:{{ project.email }}?subject=Impact Match Connection">{{ project.email }}</a></span></li>
+          <hr style="height:2px;border-width:0;color:rgb(128, 15, 234);background-color:rgb(118, 31, 223)">
+          {% endfor %}
+        </ul>
+  </body>
+{% endblock %}

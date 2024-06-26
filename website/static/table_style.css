@@ -1,0 +1,26 @@
+table {
+    border-spacing: 0;
+    margin: 1rem;
+    /* background-color:rgb(225, 217, 232);  */
+    border-collapse:collapse;
+}
+
+tr:nth-child(even){
+    background-color: #ede6f6;
+}
+
+th{
+    text-align: center;
+    border-bottom: solid 1px black;
+    font-size: large;
+    font-weight: 700;
+    font-family: "Fira Sans";
+}
+
+td{
+    padding: 20px;
+    border-bottom: solid 1px black;
+    font-size: medium;
+    text-wrap: wrap;
+    font-family: "Fira Sans";
+}

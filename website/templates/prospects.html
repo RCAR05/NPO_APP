@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% block title %}Prospects{% endblock %} 
+{% block content %}
+    <h3>Student Profiles</h3>
+    <body style="text-align: left;">
+      <!-- <table class="table", id="prospects">
+          <tr class="table__header">
+              <th>Education Level</th>
+              <th>Major</th>
+              <th>Skills and Competencies</th>
+              <th>Experience</th>
+              <th>Project Interests</th>
+              <th>Available Hours</th>
+              <th>Contact</th>
+          </tr>
+          {% for prospect in prospects %}
+          <tr>
+            <td>{{ prospect.education_level }}</td>
+            <td>{{ prospect.major }}</td>
+            <td>{{ prospect.skills }}</td>
+            <td>{{ prospect.work_experience }}</td>
+            <td>{{ prospect.interests }}</td>
+            <td>{{ prospect.hours }}</td>
+            <td>{{ prospect.email }}</td>
+          </tr>
+          {% endfor %}
+      </table>   -->
+      <h4>This is a list of students who have signed up for opportunities, if there are any profiles that match your needs please reach out to them on the email provided.</h4>
+        <hr style="height:5px;border-width:0;color:gray;background-color:gray">
+        <ul>
+        {% for prospect in prospects %} 
+        <li><span style="font-weight:bold;">Current Education Level: </span>{{ prospect.education_level }}</li>
+        <li><span style="font-weight:bold;">Major: </span>{{ prospect.education_major }} </li>
+        <li><span style="font-weight:bold;">Skills and Competencies: </span> {{ prospect.skills }} </li>
+        <li><span style="font-weight:bold;">Work Experience: </span> {{ prospect.work_experience }} </li>
+        <li><span style="font-weight:bold;">Interests: </span> {{ prospect.interests }}</li>
+        <li><span style="font-weight:bold;">Available Hours (per week): </span>{{ prospect.hours }}</li>
+        <li><span style="font-weight:bold;">Contact Email: </span> <span><a href= "mailto:{{ prospect.email }}?subject=Impact Match Connection">{{ prospect.email }}</a></span></li>
+        <hr style="height:2px;border-width:0;color:rgb(128, 15, 234);background-color:rgb(118, 31, 223)">
+        {% endfor %}
+      </ul>
+  </body>
+{% endblock %}

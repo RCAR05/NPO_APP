@@ -1,9 +1,14 @@
-{% extends "base.html" %}
-{% block title %}Sign Up{% endblock %}
-
+{% extends "base.html" %}{% block title %}Sign Up{% endblock %}
 {% block content %}
 <form method="POST">
-    <h3 align="center">Student Sign Up</h3>
+    <h3>Sign Up</h3>
+    <div class="form-group">
+      <label for="userType">Are you an Organization or a Student?</label>
+      <select id="userType", name="userType", placeholder="Student", class="form-control">
+        <option value="Student">Student</option>
+        <option value="Organization">Organization</option>
+      </select>
+    </div>
     <div class="form-group">
       <label for="email">Email Address</label>
       <input
@@ -25,13 +30,13 @@
       />
     </div>
     <div class="form-group">
-        <label for="schoolName">School Name</label>
+        <label for="schoolName">School or Organization Name</label>
         <input
           type="text"
           class="form-control"
           id="schoolName"
           name="schoolName"
-          placeholder="Enter your school name"
+          placeholder="Enter your school or organization name"
         />
       </div>
     <div class="form-group">

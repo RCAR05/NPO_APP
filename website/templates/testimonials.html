@@ -1,6 +1,29 @@
-{% extends "base.html" %}
-{% block title %}Testimonials{% endblock %}
-
-{% block content %}
-<h1>Sorry! This page is under construction.</h1>
-{% endblock %}
+{% extends "base.html" %} {% block title %}Testimonials{% endblock %} {% block content
+    %}
+    <h3>Testimonials</h3>
+    <body>
+      <table class="table", id="testimonials">
+        <tr class="table__header">
+            <th>User</th>
+            <th>Date Created</th>
+            <th>Testimonial</th>
+        </tr>
+        {% for testimonial in testimonials %}
+        <tr>
+            <td>{{ testimonial.user_id }}</td>
+            <td>{{ testimonial.date }}</td>
+            <td>{{ testimonial.data }}</td>
+        </tr>
+        {% endfor %}
+    </ul>
+    {% if user.is_authenticated%}
+      <form method="POST">
+        <textarea name="testimonial" id="testimonial" class="form-control"></textarea>
+        <br />
+        <div>
+          <button type="submit" class="btn btn-primary">Add testimonial</button>
+        </div>
+      </form>
+    {% endif %}
+    </body>
+    {% endblock %}

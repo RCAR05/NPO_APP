@@ -1,20 +1,15 @@
-{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
-    %}
-    <h1 align="center">Notes</h1>
-    <ul class="list-group list-group-flush" id="notes">
-      {% for note in user.notes %}
-      <li class="list-group-item">{{ note.data }}
-        <button type="button" class="close" onClick="deleteNote({{ note.id }})">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </li>
-      {% endfor %}
-    </ul>
-    <form method="POST">
-      <textarea name="note" id="note" class="form-control"></textarea>
-      <br />
-      <div align="center">
-        <button type="submit" class="btn btn-primary">Add Note</button>
-      </div>
-    </form>
-    {% endblock %}
+{% extends "base.html" %} {% block title %}About Us{% endblock %} 
+{% block content%}
+    <!-- <h2>Impact Match</h2> -->
+    <h2 style="color: rgb(37, 2, 69);">Connecting you to opportunities that make a difference...</h2>
+    <body style="background-image:url(../static/background5.png)">
+      Impact Match bridges students and non-profits, offering skill-based opportunities that can be accredited by universities. This fosters impactful change for non-profits while allowing students to gain valuable experience as part of their curriculum.
+      <div></div>
+      <hr>
+      Students sign up to find that project to boost your resume and make a real difference. 
+      <hr>
+      Organizations sign up to find motivated students who will be able to tackle that project that will make a real difference to your mission!
+    </body>
+
+{% endblock %}
+    
