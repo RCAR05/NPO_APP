@@ -1,7 +1,11 @@
 from . import db 
 from flask_login import UserMixin
 from sqlalchemy.sql import func
-
+# [RC Notes:}For the authentication, we needed a new file called models.py which would store all the database structure. 
+# For example what information would be captured when you sign in (name, email, password). 
+# We also used wekzeug.security to generate a hash password and to check the password.  
+# This models file also stored the database structure for all of our forms including Testimonials, student profiles, organization
+# profiles
 class Note(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     data = db.Column(db.String(10000))

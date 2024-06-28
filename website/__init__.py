@@ -3,6 +3,13 @@ from flask_sqlalchemy import SQLAlchemy as sqlal
 from os import path
 from flask_login import LoginManager
 
+# [RC Notes:] __Init__.py this was the file that sat with in the website folder. This allowed the website folder to viewed as a package. 
+# And allowing you to import from the website package.  
+# In this file we imported Flask which is a web framework for python, that makes it easy to get started with web development. 
+# Perfect for this type of project. The most useful thing is that it makes it very easy to test and debug the code as you progress. 
+# It also integrates with Jinja2 which helps in generating HTML form templates. 
+# It also has extensions that help handle user authentication (Flask_Login) and, form handling and database integration 
+# (Flask_SQLALCHEMY) which are all aspects we had identified as necessary for our project. 
 
 db = sqlal()
 DB_NAME = "database.db"

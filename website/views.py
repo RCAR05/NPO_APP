@@ -119,6 +119,8 @@ def org_profile():
     return render_template("organization_profile.html", user=current_user)
 #Data pull for the tables
 #headings = ("Organization", "Project Description", "Estimated Hours")
+#[RC Note:] the two views below were required to share the information that each user had shared in the user registration. 
+# For this we would query the database for each user. 
 @views.route('/projects', methods=['GET'])
 @login_required
 def projects():

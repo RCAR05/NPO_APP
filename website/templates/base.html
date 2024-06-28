@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+  <!-- [RC Notes:]	The first html template to be built was base.html. Here we had the <head> section that dealt with styling- 
+    we use two bootstrap style sheets to start off with. 
+    And later adding the style sheets built by Sri for more customized view. 
+    The first bootstrap was useful for the navbar which is in our final website. -->
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,10 +26,15 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='table_style.css') }}"
     />
-    <!-- Allows the title of the web page to be customized in other child templates, this means that code can be reused and helps with consistency -->
+    <!-- [RC Notes:]  
+     The <title> block in the base html allowed for the title of future pages based on the initial page to be customized 
+      and for code to be reused and consistent -->
     <title>{% block title %}Home{% endblock %}</title>
   </head>
   <body>
+    <!-- o	Finally, the <body> section, allowed for a consistent body structure throughout the website, 
+      the navbar was a primary feature here, and made easier by the bootstrap style sheet. 
+      The navbar is collapsable if the website page is made smaller then the navbar becomes a drop down.  -->
     <h1>IMPACT MATCH</h1>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <button
@@ -38,7 +47,13 @@
       </button>
       <div class="collapse navbar-collapse" id="navbar">
         <div class="navbar-nav">
+          <!-- [RC Notes:] The base.html navbar section defines what can be seen on the navbar and where one is taken when 
+           they click on the individual buttons in the navbar. For example home “/” would take you to the “About Us”. 
+           The href=”/login” actually corresponds to a @auth.route(‘/login’) in the auth.py file. -->
           {% if user.is_authenticated %}
+          <!-- [RC Notes:] The other feature with the navbar that was implemented later in the development process was what 
+           views were visible to an authenticated user or unauthenticated user and what was visible to a student or 
+           organization. This all uses if statements within the base.html.  -->
             <a class="nav-item nav-link" id="home" href="/">Home</a>
             {% if user.is_student %}
               <a class="nav-item nav-link" id="user_profile" href="/profile">User Profile</a>
@@ -59,7 +74,8 @@
         </div>
       </div>
     </nav>
-
+    <!-- [RC Notes:]The flash messages were also stored in the base.html. If the flash message was an error it would be red 
+     and if it was a success message it would be green. It also allowed you to dismiss the message.  -->
     {% with messages = get_flashed_messages(with_categories=true) %} 
     {% if messages %} {% for category, message in messages %} 
       {% if category == 'error' %}

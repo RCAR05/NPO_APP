@@ -2,6 +2,12 @@
 {% block content
     %}
     <h3>Projects</h3>
+    <!-- [RC Note:] This section I ended up spending alot of time on, in order to get a nicer view. Initially I had a table
+     with each project being on a row. Unfortunately this ended up looking very squished and not appealing to read. I choose
+     in the end to have a list format using a for loop to ensure that it provided the information for all available projects. 
+     This is the same process for the student profiles. I learned here, that where possible you should take some time 
+     to work on one view until you are happy that it is sufficient and then take the learnings to the next view so that you 
+     don't have to fix repeated mistakes.  -->
     <body style="text-align: left;">
       <!-- <table class="table", id="projects">
           <tr class="table__header">
