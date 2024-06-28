@@ -22,7 +22,7 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='table_style.css') }}"
     />
-
+    <!-- Allows the title of the web page to be customized in other child templates, this means that code can be reused and helps with consistency -->
     <title>{% block title %}Home{% endblock %}</title>
   </head>
   <body>
@@ -94,18 +94,5 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
-
-{% block javascript %}
-    <script type="text/javascript">
-      function deleteNote(noteId) {
-  fetch("/delete-note", {
-    method: "POST",
-    body: JSON.stringify({ noteId: noteId }),
-  }).then((_res) => {
-    window.location.href = "/";
-  });
-  }
-</script>
-{% endblock %}
   </body>
 </html>

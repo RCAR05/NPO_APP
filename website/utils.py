@@ -30,8 +30,3 @@ def get_groq_response(prompt: str):
         model="llama3-8b-8192",
     )
     return chat_completion
-
-if __name__ == "__main__":
-    test_prompt = "Top 3 reasons that Robyn is awesome! Response must be less than 50 words."
-    response = get_groq_response(prompt=test_prompt)
-    print(response.choices[0].message.content)
